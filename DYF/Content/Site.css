@@ -1,17 +1,102 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+﻿/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+
+/**********************	 General rule	*************************/
+
+.icon-block {
+    padding: 0 15px;
 }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    .icon-block .material-icons {
+        font-size: inherit;
+    }
+
+html, body {
+    height: 100%;
+    /* The html and body elements cannot have any padding or margin. */
 }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
+main, .main-content {
+    height: 100%;
+    background-color: #f7f7f7;
 }
+
+
+
+header, main {
+    padding-left: 300px;
+}
+
+/*********************************************************/
+
+/**********************	 Main Navbar	*************************/
+nav div:first-child {
+    margin-right: 150px
+}
+
+/*********************************************************/
+
+/**********************	 Side Navbar	*************************/
+
+.profile-picture {
+    height: 45px;
+    width: 45px;
+    margin-left: 6px;
+}
+
+.side-nav .collapsible-header, .side-nav.fixed .collapsible-header {
+    padding-left: 32px;
+}
+
+.side-nav .collapsible-body, .side-nav.fixed .collapsible-body {
+    background-color: transparent;
+}
+
+.side-nav .collapsible-body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.side-nav .collapsible-header i {
+    margin: 0px !important;
+}
+
+.side-nav {
+    background-image: url("../img/bg.jpg");
+}
+
+.user-info {
+    background: #bfadad;
+    padding: 10px;
+    background-image: url("../img/b.jpg");
+    background-repeat: no-repeat;
+    height: 65px;
+    margin-bottom: 0px;
+}
+
+.side-nav li.active {
+    background-color: rgba(0, 0, 0, 0);
+}
+/*********************************************************/
+/***************** Media queries **************************/
+@media screen and (max-width: 992px) {
+    header, main {
+        padding-left: 0px;
+    }
+}
+/*********************************************************/
+
+
+
+
+
+
+
+
+

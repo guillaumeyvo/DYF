@@ -6,7 +6,7 @@ using System.Web;
 
 namespace DYF.Models
 {
-    public class DyfInitializer : DropCreateDatabaseAlways<DyfContext>
+    public class DyfInitializer : DropCreateDatabaseIfModelChanges<DyfContext> // DropCreateDatabaseAlways
     {
         protected override void Seed(DyfContext context)
         {

@@ -4,38 +4,98 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/img/favicon.ico")">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+    <header>
+        <!-- Main navbar -->
+        <div class="navbar-fixed">
+            <nav>
+                <div>
+                    <div class="nav-wrapper">
+                        <div class="container">
+                            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+                        </div>
+                        <div>
+                            <a href="#!" class="brand-logo">Logo</a>
+                        </div>
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="sass.html">Sass</a></li>
+                            <li><a href="badges.html">Components</a></li>
+                            <li><a href="collapsible.html">Javascript</a></li>
+                            <li><a href="mobile.html">Mobile</a></li>
+                        </ul>
+                        <ul class="side-nav" id="mobile-demo">
+                            <li><a href="sass.html">Sass</a></li>
+                            <li><a href="badges.html">Components</a></li>
+                            <li><a href="collapsible.html">Javascript</a></li>
+                            <li><a href="mobile.html">Mobile</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <!-- End of Main navbar -->
+        <!-- Side navbar -->
+        <div class="hide-on-small-only side-nav fixed">
+            <div class="row user-info">
+                <div class="col s3">
+                    <img class="circle profile-picture" src="img/img.jpg">
+                </div>
+                <div class="col s9">
+                    <span class="white-text name">Bienvenue,</span>
+                    <h6 class="white-text email">jdandturk@gmail.com</h6>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
-                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
-                </ul>
+            <ul>
+                <!-- <li><a href="#!"><i class="material-icons">cloud</i>First Link With Icon</a></li> -->
+                <li><a href="#!">Menu 1</a></li>
+                <li><a href="#!">Menu 2</a></li>
+                <li>
+                    <ul class="collapsible" data-collapsible="accordion">
+                        <li>
+                            <a href="#!" class="collapsible-header">
+                                <i class="material-icons right more">expand_more</i>
+                                <i class="material-icons right less" style="display: none">expand_less</i>
+                                First
+                            </a>
+                            <div class="collapsible-body">
+                                <ul>
+                                    <li><a href="#!">SubMenu 1</a></li>
+                                </ul>
+                            </div>
+                    </ul>
+                </li>
+                <li>
+                    <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Subheader</a></li>
+                <li><a class="waves-effect" href="#!">Third Link With Waves</a></li>
+            </ul>
+        </div>
+        <!-- End of Side navbar -->
+    </header>
+    <main>
+        <div class="row">
+            <!-- Main content -->
+            <div class="col s12 m12">
+                <div class="row">
+                    @RenderBody()
+                </div>
             </div>
         </div>
-    </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
-    </div>
-
+    </main>
+    <!-- End of Main content -->
+    <!--  Scripts-->
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/materialize")
     @RenderSection("scripts", required: false)
 </body>
 </html>
+@*@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/materialize")
+@RenderSection("scripts", required: false)*@
