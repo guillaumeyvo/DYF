@@ -43,6 +43,7 @@ namespace DYF.Models
         public DbSet<ReferencePoidsMoyen> ReferencePoidsMoyen { get; set; }
         public DbSet<RepartitionBande> RepartitionBande { get; set; }
         public DbSet<TraitementPathologie> TraitementPathologie { get; set; }
+        public DbSet<TypePesee> TypePesee { get; set; }
         public DbSet<TypeProduit> TypeProduit { get; set; }
         public DbSet<TypeVolaille> TypeVolaille { get; set; }
         public DbSet<VenteOeuf> VenteOeuf { get; set; }

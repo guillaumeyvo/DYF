@@ -146,7 +146,20 @@ namespace DYF.Migrations
             });
             context.SaveChanges();
 
+            #endregion
 
+            #region TypePesee
+
+            context.TypePesee.AddOrUpdate(p => p.Libelle, new TypePesee
+            {
+                Libelle = "Groupée"
+            });
+            context.SaveChanges();
+            context.TypePesee.AddOrUpdate(p => p.Libelle, new TypePesee
+            {
+                Libelle = "Individuelle"
+            });
+            context.SaveChanges();
             #endregion
         }
     }

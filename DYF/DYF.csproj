@@ -203,6 +203,10 @@
     <Compile Include="Migrations\201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.Designer.cs">
       <DependentUpon>201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708072027122_Adding_TypePesee_Entity.cs" />
+    <Compile Include="Migrations\201708072027122_Adding_TypePesee_Entity.Designer.cs">
+      <DependentUpon>201708072027122_Adding_TypePesee_Entity.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Achat.cs" />
     <Compile Include="Models\Bande.cs" />
@@ -229,6 +233,7 @@
     <Compile Include="Models\ReferencePoidsMoyen.cs" />
     <Compile Include="Models\RepartitionBande.cs" />
     <Compile Include="Models\TraitementPathologie.cs" />
+    <Compile Include="Models\TypePesee.cs" />
     <Compile Include="Models\TypeProduit.cs" />
     <Compile Include="Models\TypeVolaille.cs" />
     <Compile Include="Models\VenteOeuf.cs" />
@@ -324,6 +329,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.resx">
       <DependentUpon>201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708072027122_Adding_TypePesee_Entity.resx">
+      <DependentUpon>201708072027122_Adding_TypePesee_Entity.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

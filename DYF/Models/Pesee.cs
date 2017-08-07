@@ -18,5 +18,8 @@ namespace DYF.Models
         public int IdRepartitionBande { get; set; }
         [ForeignKey("IdRepartitionBande")]
         public RepartitionBande RepartitionBande { get; set; }
+        public int IdTypePesee { get; set; }
+        [ForeignKey("IdTypePesee")]
+        public TypePesee TypePesee { get; set; }
     }
 }
