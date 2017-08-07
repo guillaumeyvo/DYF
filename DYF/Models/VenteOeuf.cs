@@ -13,8 +13,8 @@ namespace DYF.Models
         public int NombreDOeuf { get; set; }
         public DateTime DateDeVente { get; set; }
         public int PrixUnitaire { get; set; }
-        public int IdRepartitionBande { get; set; }
-        [ForeignKey("IdRepartitionBande")]
-        public RepartitionBande RepartitionBande { get; set; }
+        public int IdBande { get; set; }
+        [ForeignKey("IdBande")]
+        public Bande Bande { get; set; }
     }
 }

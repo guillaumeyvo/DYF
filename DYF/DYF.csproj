@@ -195,6 +195,15 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708061759543_InitDb.cs" />
+    <Compile Include="Migrations\201708061759543_InitDb.Designer.cs">
+      <DependentUpon>201708061759543_InitDb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.cs" />
+    <Compile Include="Migrations\201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.Designer.cs">
+      <DependentUpon>201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Achat.cs" />
     <Compile Include="Models\Bande.cs" />
     <Compile Include="Models\Batiment.cs" />
@@ -227,10 +236,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="App_Data\DyfDb.mdf" />
-    <Content Include="App_Data\DyfDb_log.ldf">
-      <DependentUpon>DyfDb.mdf</DependentUpon>
-    </Content>
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -295,7 +300,6 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
   </ItemGroup>
@@ -310,6 +314,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-1.10.2.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201708061759543_InitDb.resx">
+      <DependentUpon>201708061759543_InitDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.resx">
+      <DependentUpon>201708061832211_AddOneToManyRelationBetween_Bande_VenteOeuf.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

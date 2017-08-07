@@ -30,5 +30,7 @@ namespace DYF.Models
         public Achat Achat { get; set; }
 
         public virtual ICollection<RepartitionBande> RepartitionBande { get; set; }
+        public virtual ICollection<VenteOeuf> VenteOeuf { get; set; }
+
     }
 }

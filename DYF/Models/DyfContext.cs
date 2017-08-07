@@ -14,7 +14,10 @@ namespace DYF.Models
 
             //Database.SetInitializer<DyfContext>(new DropCreateDatabaseIfModelChanges<DyfContext>());
             //Database.SetInitializer<DyfContext>(new DropCreateDatabaseAlways<DyfContext>());
-            Database.SetInitializer<DyfContext>(new DyfInitializer());
+            //Database.SetInitializer<DyfContext>(new DyfInitializer());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DyfContext, DYF.Migrations.Configuration>("mysqlcs"));
+
+
             //Database.SetInitializer<DyfContext>(new SchoolDBInitializer());
         }
 
@@ -47,6 +50,7 @@ namespace DYF.Models
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
+            //modelBuilder.HasDefaultSchema("dyftest");
 
             base.OnModelCreating(modelBuilder);
         }

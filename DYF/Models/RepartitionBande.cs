@@ -26,10 +26,5 @@ namespace DYF.Models
         public virtual ICollection<Pesee> Pesees { get; set; }
         public virtual ICollection<ProductionOeuf> ProductionOeufs { get; set; }
         public virtual ICollection<VenteVolailles> VenteVolailles { get; set; }
-        public virtual ICollection<VenteOeuf> VenteOeuf { get; set; }
-
-
-
-
     }
 }
