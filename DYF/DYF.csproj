@@ -248,14 +248,6 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\materialize-orange-deep-orange.css" />
-    <Content Include="Content\SmartWizard\smart_wizard.css" />
-    <Content Include="Content\SmartWizard\smart_wizard.min.css" />
-    <Content Include="Content\SmartWizard\smart_wizard_theme_arrows.css" />
-    <Content Include="Content\SmartWizard\smart_wizard_theme_arrows.min.css" />
-    <Content Include="Content\SmartWizard\smart_wizard_theme_circles.css" />
-    <Content Include="Content\SmartWizard\smart_wizard_theme_circles.min.css" />
-    <Content Include="Content\SmartWizard\smart_wizard_theme_dots.css" />
-    <Content Include="Content\SmartWizard\smart_wizard_theme_dots.min.css" />
     <Content Include="Plugins\DataTable\Buttons-1.3.1\css\buttons.bootstrap.css" />
     <Content Include="Plugins\DataTable\Buttons-1.3.1\css\buttons.bootstrap.min.css" />
     <Content Include="Plugins\DataTable\Buttons-1.3.1\css\buttons.dataTables.css" />
@@ -335,6 +327,7 @@
     <Content Include="Plugins\DataTable\Responsive-2.1.1\js\responsive.foundation.min.js" />
     <Content Include="Plugins\DataTable\Responsive-2.1.1\js\responsive.jqueryui.js" />
     <Content Include="Plugins\DataTable\Responsive-2.1.1\js\responsive.jqueryui.min.js" />
+    <Content Include="Plugins\Highcharts\highcharts.src.js" />
     <Content Include="Plugins\materialize-stepper\materialize-stepper.css" />
     <Content Include="Plugins\materialize-stepper\materialize-stepper.js" />
     <Content Include="Plugins\materialize-stepper\materialize-stepper.min.css" />
@@ -404,6 +397,9 @@
     <Content Include="fonts\roboto\Roboto-Thin.woff2" />
     <Content Include="Plugins\DataTable\Buttons-1.3.1\css\common.scss" />
     <Content Include="Plugins\DataTable\Buttons-1.3.1\css\mixins.scss" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -415,8 +411,6 @@
     <Content Include="Scripts\Pesee\NouvellePesee\stats.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Scripts\SmartWizard\jquery.smartWizard.js" />
-    <Content Include="Scripts\SmartWizard\jquery.smartWizard.min.js" />
     <Content Include="Todo.txt" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

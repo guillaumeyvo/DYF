@@ -18,8 +18,8 @@
             //type: "POST",
             url: "api/Pesee/RepartitionBande/" + idBandeSelected,
             success: function (response) {
-                $selectRepartitionBande.material_select('destroy');
-                $selectRepartitionBande.material_select();
+                //$selectRepartitionBande.material_select('destroy');
+                //$selectRepartitionBande.material_select();
                 console.log("fine");
             }
         });
