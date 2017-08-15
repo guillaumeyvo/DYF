@@ -8,6 +8,10 @@
     <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/img/favicon.ico")">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/materialize")
+        @*<link href="~/Content/materialize-orange-deep-orange.css" rel="stylesheet" />*@
+    @RenderSection("css", false)
 </head>
 <body>
     <header>
@@ -44,7 +48,7 @@
         <div class="hide-on-small-only side-nav fixed">
             <div class="row user-info">
                 <div class="col s3">
-                    <img class="circle profile-picture" src="img/img.jpg">
+                    <img class="circle profile-picture" src="@Url.Content("~/img/profilePicture.jpg")">
                 </div>
                 <div class="col s9">
                     <span class="white-text name">Bienvenue,</span>
@@ -91,11 +95,46 @@
     </main>
     <!-- End of Main content -->
     <!--  Scripts-->
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/materialize")
+
+    <script>
+        $(document).ready(function () {
+            $('.dropdown-button').dropdown({
+                inDuration: 300,
+                outDuration: 225,
+                constrainWidth: false, // Does not change width of dropdown to that of the activator
+                //hover: true, // Activate on hover
+                gutter: 0, // Spacing from edge
+                belowOrigin: true, // Displays dropdown below the button
+                alignment: 'left', // Displays dropdown with edge aligned to the left of button
+                stopPropagation: false // Stops event propagation
+            });
+            $('select').material_select();
+            $('ul.tabs').tabs();
+            $('.modal').modal();
+            $('.collapsible').collapsible();
+            //var themeColor = "rgb(223, 96, 3)";
+            //$(".nav-wrapper").css("background-color", themeColor);
+            //$(".secondary-content>.material-icons").css("color", themeColor);
+            //$(".btn").css("background-color", themeColor);
+            //$(".page-footer").css("background-color", themeColor);
+            //$(".input-field").css("color", themeColor);
+            //$(".input-field>.material-icons").css("color", themeColor);
+            //$(".input-field>label").css("color", themeColor);
+            //$(".btn-floating").css("background-color", themeColor);
+            //$(".dropdown-content>li>a").css("color", themeColor);
+        });
+
+    </script>
+    <!-- #region Dynamically includes scripts for each view -->
+
     @RenderSection("scripts", required: false)
+
+    @foreach (string path in Directory.GetFiles(Server.MapPath(@Url.Content("~/Scripts/" + @ViewBag.CurrentController + "/" + @ViewBag.CurrentView + ""))))
+    {
+        @Scripts.Render("~/Scripts/" + @ViewBag.CurrentController + "/" + @ViewBag.CurrentView + "/" + Path.GetFileName(path));
+    }
+
+    <!-- #endregion -->
+
 </body>
 </html>
-@*@Scripts.Render("~/bundles/jquery")
-@Scripts.Render("~/bundles/materialize")
-@RenderSection("scripts", required: false)*@

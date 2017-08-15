@@ -1,0 +1,65 @@
+﻿@model IEnumerable<DYF.Models.Bande>
+
+<div class="step-title waves-effect">Informations</div>
+<div class="step-content">
+    <div class="row">
+        <form class="col s12 card" id="formDetailNouvellePesee" name="formDetailNouvellePesee">
+            <div class="row card-header">
+                Information de la pesée
+                <a href='#' class='dropdown-button card-header-option' data-activates='dropdown1'><i class="material-icons right">more_vert</i></a>
+                <ul id='dropdown1' class='dropdown-content'>
+                    <li><a href="#!">one</a></li>
+                    <li><a href="#!">two</a></li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m6 l6">
+                    <select id="bande" name="bande" class="select-required">
+                        <option value="" disabled selected>Choisir une bande</option>
+                        @foreach (var bande in Model)
+                        {
+                            <option value="@bande.Id">@bande.Nom</option>
+                        }
+                        @*<option value="1">Bande 1</option>
+                        <option value="2">Bande 2</option>
+                        <option value="3">Bande 3</option>*@
+                    </select>
+                    <label>Bande</label>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <select id="repartitionBande" class="select-required" name="repartitionBande">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option value="1">Option 1</option>
+                        <option value="2">Option 2</option>
+                        <option value="3">Option 3</option>
+                    </select>
+                    <label>Repartition Bande</label>
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col s12 m6 l6">
+                    <div class="input-field col s12">
+                        <input type="text" class="datepicker date-required" id="datePesee" name="datePesee">
+                        <label for="datePesee">Selectionner la date de la pesée</label>
+                    </div>
+
+                </div>
+                <div class="col s12 m6 l6">
+                    <div class="input-field col s12">
+                        <input name="typePesee" type="radio" id="test1" checked />
+                        <label for="test1">Red</label>
+                        <input name="typePesee" type="radio" id="test2" />
+                        <label for="test2">Yellow</label>
+                    </div>
+
+                </div>
+            </div>
+            
+        </form>
+        
+    </div>
+    <div class="row step-actions">
+        <a class="waves-effect waves-light btn" id="endOfFirstStep">SUIVANT</a>
+    </div>
+</div>

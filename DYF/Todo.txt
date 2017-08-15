@@ -1,0 +1,44 @@
+﻿ Modules
+
+*****event*****
+
+
+*****form*****
+	html
+		- dropdown pour les differentes bandes
+		- generation du datepicker avec min la derneiere date de pesse
+		- radio button type de pesee 
+		- button pour submit
+	fonctions
+		- submit
+		- formResetted
+		- bandeSelected
+		- generateDatePicker
+	event
+		- formReseted
+		- formsubmitted
+
+*****fichepesee*****
+	html
+		- bouton pour ajouter une nouvelle ligne au tableau
+		- tableau (col : nombre de sujet - poids - bouton supprimer)
+		- bouton pour tout valider
+	fonction
+		- toutvalider
+		- ajouterUneCategorieDePoids
+		- VerifierQueLaCategorieExistePas
+		- Supprimer une ligne Du tableau
+		- Sauvegarder les donnees en base
+		- Resetted
+	event
+		- CalculerResultatPesee
+		- AddCategoriePoids
+		- SupprimerCategoriePoids
+		- SauvegarderBDD
+
+*****infopesee*****
+
+	
+
+
+

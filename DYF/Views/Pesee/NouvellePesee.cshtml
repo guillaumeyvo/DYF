@@ -1,0 +1,40 @@
+﻿@model IEnumerable<DYF.Models.Bande>
+@{
+    ViewBag.Title = "NouvellePesee";
+}
+@section css {
+    <link href="@Url.Content("~/Plugins/materialize-stepper/materialize-stepper.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Plugins/DataTable/datatables.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Plugins/DataTable/dataTables.material.min.css")" rel="stylesheet" />
+}
+
+<h5>NouvellePesee</h5>@ViewBag.CurrentController / @ViewBag.CurrentView
+
+<div class="col s12 m12 l12">
+    <ul class="stepper linear">
+        <li class="step active ">
+            @Html.Partial("~/Views/Pesee/_step1.cshtml")
+        </li>
+        <li class="step ">
+            @Html.Partial("~/Views/Pesee/_step2.cshtml")
+        </li>
+        <li class="step ">
+            @Html.Partial("~/Views/Pesee/_step3.cshtml")
+        </li>
+    </ul>
+
+</div>
+
+
+
+@section scripts {
+    @Scripts.Render("~/Scripts/jquery.validate.js")
+    @Scripts.Render("~/Plugins/materialize-stepper/materialize-stepper.js")
+    @Scripts.Render("~/Plugins/mustache/mustache.min.js")
+    @Scripts.Render("~/Plugins/DataTable/datatables.min.js")
+    <script src="https://code.highcharts.com/highcharts.src.js"></script>
+
+}
+
+
+

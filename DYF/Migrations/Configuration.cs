@@ -134,7 +134,8 @@ namespace DYF.Migrations
                 EffectifInitial = 1500,
                 EffectifActuel = 1500,
                 TotalMortalite = 0,
-                IdBande = context.Bande.FirstOrDefault().Id
+                IdBande = context.Bande.FirstOrDefault().Id,
+                Nom = "Batiment A"
             });
             context.RepartitionBande.AddOrUpdate(p => p.IdBatiment, new RepartitionBande
             {
@@ -142,7 +143,8 @@ namespace DYF.Migrations
                 EffectifInitial = 1500,
                 EffectifActuel = 1500,
                 TotalMortalite = 0,
-                IdBande = context.Bande.FirstOrDefault().Id
+                IdBande = context.Bande.FirstOrDefault().Id,
+                Nom = "Batiment B"
             });
             context.SaveChanges();
 

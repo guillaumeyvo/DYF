@@ -1,0 +1,38 @@
+﻿<div class="step-title waves-effect">Résultat</div>
+<div class="step-content">
+    <div class="card">
+        <div class="row card-header">
+            Résultat de la pesée
+            <a href='#' class='dropdown-button card-header-option' data-activates='dropdown1'><i class="material-icons right">more_vert</i></a>
+            <ul id='dropdown1' class='dropdown-content'>
+                <li><a href="#!">one</a></li>
+                <li><a href="#!">two</a></li>
+            </ul>
+        </div>
+        <div class="row" id="statsResults">
+            @Html.Partial("~/Views/Pesee/_step3CardTemplate.cshtml")
+            
+        </div>
+        <div class="row">
+            <div><a href="#modalStatsGraph"><label style="cursor:pointer"><i class="material-icons" style="vertical-align:middle;">visibility</i> Voir le graphique</label></a></div>
+        </div>
+    </div>
+    <div class="row step-actions">
+        <a class="waves-effect waves-light btn" id="firstStep">SUIVANT</a>
+        <button class="waves-effect waves-dark btn-flat previous-step">Precedent</button>
+    </div>
+</div>
+
+
+<div id="modalStatsGraph" class="modal modal-fixed-footer">
+    <div class="modal-content">
+        <div class="row" id="statsGraph">
+        </div>
+    </div>
+    <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">FERMER</a>
+    </div>
+</div>
+
+
+
