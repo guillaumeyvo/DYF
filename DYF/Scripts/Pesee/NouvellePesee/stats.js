@@ -64,7 +64,7 @@
 
         };
 
-        //console.log("stats", stats);
+        console.log("stats", stats);
 
         return stats;
     }
