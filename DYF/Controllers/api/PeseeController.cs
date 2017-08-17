@@ -17,11 +17,11 @@ namespace DYF.Controllers.api
         }
         [HttpGet]
 
-        public IHttpActionResult RepartitionBande(int idBande)
+        public IHttpActionResult GetRepartitionBande(int idBande)
         {
             try
             {
-                IEnumerable<RepartitionBande> liste = db.RepartitionBande.Where(r => r.IdBande == idBande);
+                var liste = db.RepartitionBande.Where(r => r.IdBande == idBande).Select(p => new { value = p.Id, text = p.Nom});
                 return Ok(liste);
             }
             catch (Exception e)
@@ -32,12 +32,17 @@ namespace DYF.Controllers.api
         }
 
         [HttpGet]
-        public IHttpActionResult RepartitionBande()
+        public IHttpActionResult GetPeseeLastDate(int idRepartitionBande)
         {
             try
             {
-                IEnumerable<RepartitionBande> liste = db.RepartitionBande.Where(r => r.IdBande == 1);
-                return Ok(liste);
+                DateTime date;
+                if (db.Pesee.Any(p => p.IdRepartitionBande == idRepartitionBande))
+                {
+                    date = db.Pesee.OrderByDescending(o => o.Date).FirstOrDefault(p => p.IdRepartitionBande == idRepartitionBande).Date;
+                    return Ok(new { year = date.Year, month = date.Month, day = date.Day });
+                }
+                return Ok();
             }
             catch (Exception e)
             {

@@ -214,6 +214,10 @@
     <Compile Include="Migrations\201708170253572_Problem-with-loading-project.Designer.cs">
       <DependentUpon>201708170253572_Problem-with-loading-project.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708171012034_Removing_field_ecarty_type.cs" />
+    <Compile Include="Migrations\201708171012034_Removing_field_ecarty_type.Designer.cs">
+      <DependentUpon>201708171012034_Removing_field_ecarty_type.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Achat.cs" />
     <Compile Include="Models\Bande.cs" />
@@ -478,6 +482,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708170253572_Problem-with-loading-project.resx">
       <DependentUpon>201708170253572_Problem-with-loading-project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708171012034_Removing_field_ecarty_type.resx">
+      <DependentUpon>201708171012034_Removing_field_ecarty_type.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

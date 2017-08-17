@@ -13,7 +13,6 @@ namespace DYF.Models
         public double PoidsMoyen { get; set; }
         public double Homogeneite { get; set; }
         public DateTime Date { get; set; }
-        public double EcartType { get; set; }
         public int AgeDesSujetEnSemaine { get; set; }
         public int IdRepartitionBande { get; set; }
         [ForeignKey("IdRepartitionBande")]

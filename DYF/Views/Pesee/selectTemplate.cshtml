@@ -1,20 +1,7 @@
 ﻿
-@*<script id="select-template" type="text/template">
+<script id="select-template" type="text/template">
+    <option value="{{defaultValue}}" disabled selected>{{defaultText}}</option>
     {{#template}}
-    <div class="col s12 m4 l4">
-        <div class="card horizontal hoverable">
-            <div class="card-image" style="background:{{color}}">
-                <i class="material-icons">{{icon}}</i>
-            </div>
-            <div class="card-stacked">
-                <div class="card-content">
-                    <div>{{statsName}}</div>
-                    <div class="number" id="resultatPeseeEffectif">{{value}}</div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <option value="" disabled selected>{{defaultText}}</option>
     <option value="{{value}}">{{text}}</option>
     {{/template}}
-</script>*@
+</script>

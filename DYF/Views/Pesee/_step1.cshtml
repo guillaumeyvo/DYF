@@ -20,18 +20,12 @@
                         {
                             <option value="@bande.Id">@bande.Nom</option>
                         }
-                        @*<option value="1">Bande 1</option>
-                        <option value="2">Bande 2</option>
-                        <option value="3">Bande 3</option>*@
                     </select>
                     <label>Bande</label>
                 </div>
                 <div class="input-field col s12 m6 l6">
                     <select id="repartitionBande" class="select-required" name="repartitionBande">
-                        <option value="" disabled selected>Choose your option</option>
-                        <option value="1">Option 1</option>
-                        <option value="2">Option 2</option>
-                        <option value="3">Option 3</option>
+                        <option value="" disabled selected>Choisir un bâtiment</option>
                     </select>
                     <label>Repartition Bande</label>
                 </div>
@@ -47,10 +41,10 @@
                 </div>
                 <div class="col s12 m6 l6">
                     <div class="input-field col s12">
-                        <input name="typePesee" type="radio" id="test1" checked />
-                        <label for="test1">Red</label>
-                        <input name="typePesee" type="radio" id="test2" />
-                        <label for="test2">Yellow</label>
+                        <input name="typePesee" type="radio" id="individuelle" checked />
+                        <label for="test1">Individuelle</label>
+                        <input name="typePesee" type="radio" id="groupee" />
+                        <label for="test2">Groupée</label>
                     </div>
 
                 </div>
@@ -63,3 +57,6 @@
         <a class="waves-effect waves-light btn" id="endOfFirstStep">SUIVANT</a>
     </div>
 </div>
+@Html.Partial("~/Views/Pesee/selectTemplate.cshtml")
+
+

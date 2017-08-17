@@ -12,21 +12,7 @@
             $("#" + $(this.$node).attr("id") + "").valid();
         }
     });
-    $('.datepicker').remove();
-    var t = '<input type="text" class="datepicker date-required" id="datePesee" name="datePesee">';
-
-    $("label[for='datePesee']").before(t)
-    picker = $('.datepicker').pickadate({
-        selectMonths: true, // Creates a dropdown to control month
-        selectYears: 1, // Creates a dropdown of 15 years to control year,
-        today: 'xx',
-        clear: 'Clear',
-        close: 'Ok',
-        closeOnSelect: false // Close upon selecting a date,
-        , onSet: function (ele) { // trigger validation of field on date selected
-            $("#" + $(this.$node).attr("id") + "").valid();
-        }
-    });
+   
     //picker.start();
     // #endregion
 

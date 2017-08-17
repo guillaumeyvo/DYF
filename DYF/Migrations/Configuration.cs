@@ -163,6 +163,31 @@ namespace DYF.Migrations
             });
             context.SaveChanges();
             #endregion
+
+            #region Pesees
+            context.Pesee.AddOrUpdate(p => p.Date, new Pesee
+            {
+                NombreDeSujetsPeses = 124,
+                PoidsMoyen = 1558,
+                Homogeneite = 84,
+                Date = new DateTime(2017, 08, 8),
+                IdRepartitionBande = context.RepartitionBande.FirstOrDefault().Id,
+                IdTypePesee = context.TypePesee.FirstOrDefault(t => t.Libelle == "Individuelle").Id
+                
+            });
+
+            context.Pesee.AddOrUpdate(p => p.Date, new Pesee
+            {
+                NombreDeSujetsPeses = 136,
+                PoidsMoyen = 1610,
+                Homogeneite = 89,
+                Date = new DateTime(2017, 08, 15),
+                IdRepartitionBande = context.RepartitionBande.FirstOrDefault().Id,
+                IdTypePesee = context.TypePesee.FirstOrDefault(t => t.Libelle == "Individuelle").Id
+
+            });
+
+            #endregion
         }
     }
 }

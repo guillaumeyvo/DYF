@@ -19,7 +19,7 @@
         $dataTableBody = $('#tablePeseeDetails tbody');
 
         // hiding datatable on init
-        //$datatableWrapper.hide();
+        $datatableWrapper.hide();
 
 
         // binding events
