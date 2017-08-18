@@ -20,5 +20,6 @@ namespace DYF.Models
         public int IdTypePesee { get; set; }
         [ForeignKey("IdTypePesee")]
         public TypePesee TypePesee { get; set; }
+        public virtual ICollection<DetailsPesee> DetailsPesee { get; set; }
     }
 }

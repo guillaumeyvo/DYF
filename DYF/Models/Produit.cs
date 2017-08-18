@@ -12,8 +12,8 @@ namespace DYF.Models
 
         [ForeignKey("IdTypeProduit")]
         public TypeProduit TypeProduit { get; set; }
-        public ICollection<CoutProduit> CoutProduit { get; set; }
-        public ICollection<Achat> Achats { get; set; }
+        public virtual ICollection<CoutProduit> CoutProduit { get; set; }
+        public virtual ICollection<Achat> Achats { get; set; }
         public virtual ICollection<Fournisseur> Fournisseurs { get; set; }
 
 

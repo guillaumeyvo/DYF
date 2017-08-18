@@ -218,12 +218,17 @@
     <Compile Include="Migrations\201708171012034_Removing_field_ecarty_type.Designer.cs">
       <DependentUpon>201708171012034_Removing_field_ecarty_type.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201708181917523_Added_Model_DetailPesee.cs" />
+    <Compile Include="Migrations\201708181917523_Added_Model_DetailPesee.Designer.cs">
+      <DependentUpon>201708181917523_Added_Model_DetailPesee.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Achat.cs" />
     <Compile Include="Models\Bande.cs" />
     <Compile Include="Models\Batiment.cs" />
     <Compile Include="Models\Consommation.cs" />
     <Compile Include="Models\CoutProduit.cs" />
+    <Compile Include="Models\DetailsPesee.cs" />
     <Compile Include="Models\Dette.cs" />
     <Compile Include="Models\DyfContext.cs" />
     <Compile Include="Models\DyfInitializer.cs" />
@@ -485,6 +490,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201708171012034_Removing_field_ecarty_type.resx">
       <DependentUpon>201708171012034_Removing_field_ecarty_type.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201708181917523_Added_Model_DetailPesee.resx">
+      <DependentUpon>201708181917523_Added_Model_DetailPesee.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
