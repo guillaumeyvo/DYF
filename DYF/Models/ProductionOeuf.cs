@@ -13,7 +13,7 @@ namespace DYF.Models
         public int NombreDOeufsCasses { get; set; }
         public int IdRepartitionBande { get; set; }
         [ForeignKey("IdRepartitionBande")]
-        public RepartitionBande RepartitionBande { get; set; }
+        public virtual RepartitionBande RepartitionBande { get; set; }
 
     }
 }

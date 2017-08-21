@@ -13,12 +13,12 @@ namespace DYF.Models
         public DateTime Date { get; set; }
         public int IdProduit { get; set; }
         [ForeignKey("IdProduit")]
-        public Produit Produit { get; set; }
+        public virtual  Produit Produit { get; set; }
         public int IdTypeProduit { get; set; }
         [ForeignKey("IdTypeProduit")]
-        public TypeProduit TypeProduit { get; set; }
+        public virtual  TypeProduit TypeProduit { get; set; }
         public int IdFournisseur { get; set; }
         [ForeignKey("IdFournisseur")]
-        public Fournisseur Fournisseur { get; set; }
+        public virtual Fournisseur Fournisseur { get; set; }
     }
 }

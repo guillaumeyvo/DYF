@@ -14,6 +14,6 @@ namespace DYF.Models
         public HistoriquePathologie HistoriquePathologie { get; set; }
         public int IdProduit { get; set; }
         [ForeignKey("IdProduit")]
-        public Produit Produit { get; set; }
+        public virtual Produit Produit { get; set; }
     }
 }

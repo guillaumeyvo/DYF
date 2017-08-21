@@ -14,6 +14,6 @@ namespace DYF.Models
         public double PrixUnitaire { get; set; }
         public int IdRepartitionBande { get; set; }
         [ForeignKey("IdRepartitionBande")]
-        public RepartitionBande RepartitionBande { get; set; }
+        public virtual RepartitionBande RepartitionBande { get; set; }
     }
 }

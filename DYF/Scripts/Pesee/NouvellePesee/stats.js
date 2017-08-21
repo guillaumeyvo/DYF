@@ -1,10 +1,18 @@
 ﻿var stats = (function () {
 
     events.on('endOfDetailsPesee', render);
-    var $template;
+    var $template, $endOfThirdStep, stats;
+    var totalSujets = 0;
+    var totalPoids = 0;
+    
+    init();
 
     function init() {
         $template = $("#step3Card-template").html();
+        $endOfThirdStep = $("#endOfThirdStep");
+
+        // bind events
+        $endOfThirdStep.on("click", save);
     }
 
     function render(tableData) {
@@ -20,8 +28,8 @@
     function _getStats(tableData) {
         var arrayPoids = [];
         var arraySujets = [];
-        var totalSujets = 0;
-        var totalPoids = 0;
+        totalSujets = 0;
+        totalPoids = 0;
 
         for (var i = 0; i < tableData.length; i++) {
             arrayPoids.push(parseInt(tableData[i][0]));
@@ -32,7 +40,7 @@
         var poidsMoyen = calculPoidsMoyen(totalPoids, totalSujets);
         var homogeneite = calculHomogeneite(parseFloat(poidsMoyen), totalSujets, arrayPoids, arraySujets);
 
-        var stats = {
+        stats = {
             template: [
                 {
                     statsName: "Nombre de sujets pésés",
@@ -58,7 +66,11 @@
             ],
             data: {
                 arrayPoids: arrayPoids,
-                arraySujets: arraySujets
+                arraySujets: arraySujets,
+                homogeneite: homogeneite,
+                poidsMoyen: poidsMoyen,
+                totalSujets: totalSujets,
+                totalPoids: totalPoids
             },
             graphData: getGraph(arrayPoids, arraySujets)
 
@@ -144,6 +156,32 @@
 
         return graphObject;
 
+    }
+
+    function save() {
+        var info = infoPesee.data();
+        var peseeData = {
+            poidsData: stats.data.arrayPoids.join(";"),
+            sujetsData: stats.data.arraySujets.join(";"),
+            totalPoids: stats.data.totalPoids,
+            poidsMoyen: stats.data.poidsMoyen,
+            homogeneite: stats.data.homogeneite,
+            nombreDeSujetsPeses: stats.data.totalSujets,
+            idRepartitionBande: info.idRepartitionBande,
+            idBande: info.idBande,
+            datePesee: info.datePesee,
+            ageDesSujetEnSemaine: info.semaine,
+            idTypePesee: info.typePesee
+        };
+        console.log(peseeData);
+
+        $.ajax({
+            type: "POST",
+            url: "api/Pesee/SavePesee",
+            data: peseeData,
+            success: function (response) {
+            }
+        });
     }
 
     return {

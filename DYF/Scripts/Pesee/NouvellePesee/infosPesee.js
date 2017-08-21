@@ -1,7 +1,10 @@
 ﻿var infoPesee = (function () {
-    var $selectBande, $selectRepartitionBande, $datePesee,$selectTemplate;
+    var $selectBande, $selectRepartitionBande, $datePesee, $selectTemplate, semaine;
+
+    init();
+
     function init() {
-        
+
         $selectBande = $("#bande");
         $selectRepartitionBande = $("#repartitionBande");
         $datePesee = $("#datePesee");
@@ -36,8 +39,6 @@
 
 
                 $selectRepartitionBande.material_select();
-
-                console.log("fine");
             }
         });
         //$("#formDetailNouvellePesee").validate().element("#repartitionBande");
@@ -57,40 +58,52 @@
                 $datePesee.remove();
                 var datePeseeHtml = '<input type="text" class="datepicker date-required" id="datePesee" name="datePesee">';
                 $("label[for='datePesee']").before(datePeseeHtml)
-                if (Object.keys(response) == 0) {
-                    $('#datePesee').pickadate({
-                        selectMonths: true, // Creates a dropdown to control month
-                        selectYears: 5, // Creates a dropdown of 15 years to control year,
-                        //min:
-                        closeOnSelect: false // Close upon selecting a date,
-                        , onSet: function (ele) { // trigger validation of field on date selected
-                            $("#" + $(this.$node).attr("id") + "").valid();
-                        }
-                    });
-                }
-                else {
-                    $('#datePesee').pickadate({
-                        selectMonths: true, // Creates a dropdown to control month
-                        selectYears: 5, // Creates a dropdown of 15 years to control year,
-                        min: new Date(response.year, response.month, response.day),
-                        closeOnSelect: false // Close upon selecting a date,
-                        , onSet: function (ele) { // trigger validation of field on date selected
-                            $("#" + $(this.$node).attr("id") + "").valid();
-                        }
-                    });
-                }
+
+                $('#datePesee').pickadate({
+                    selectMonths: true, // Creates a dropdown to control month
+                    selectYears: 5, // Creates a dropdown of 15 years to control year,
+                    min: new Date(response.year, response.month-1, response.day),
+                    hiddenName: true,
+                    closeOnSelect: false // Close upon selecting a date,
+                    , onSet: function (ele) { // trigger validation of field on date selected
+                        $("#" + $(this.$node).attr("id") + "").valid();
+                        var dateArrivee = new Date(response.year, response.month-1, response.day);
+                        var dateSelected = ele.select;
+                        // determining corresponding week number
+                        semaine = getnombreDeSemaine(dateArrivee.getTime(), dateSelected);
+                        
+
+                    }
+                });
 
                 // reassigning the new #datePesee reference
                 $datePesee = $("#datePesee");
-                console.log("ok")
             }
         });
     }
 
-    return {
-        init : init
+    function getnombreDeSemaine(date1,date2) {
+        var timeDiff = Math.abs(date2 - date1);
+        var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24));
+        var numberOfWeek = Math.floor(diffDays / 7);
+        return numberOfWeek;
+    }
+    function getData() {
+        console.log("ddddddddd");
+        return {
+            datePesee: $("input[type='hidden'][name='datePesee']").val(),// selector for getting hidden value
+            typePesee: $("input[name='typePesee']:checked").attr("value"),
+            semaine: semaine,
+            idBande: $selectBande.find("option:selected").val(),
+            idRepartitionBande: $selectRepartitionBande.find("option:selected").val(),
+        };
     }
 
-    
+    return {
+        init: init,
+        data: getData
+    }
+
+
 
 })();

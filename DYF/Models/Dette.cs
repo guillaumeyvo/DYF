@@ -15,7 +15,7 @@ namespace DYF.Models
 
         public int IdAchat { get; set; }
         [ForeignKey("IdAchat")]
-        public Achat Achat { get; set; }
+        public virtual Achat Achat { get; set; }
         public ICollection<HistoriqueReglementDette> HistoriqueReglementDette { get; set; }
     }
 }

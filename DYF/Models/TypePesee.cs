@@ -9,6 +9,6 @@ namespace DYF.Models
     {
         public int Id { get; set; }
         public string Libelle { get; set; }
-        public ICollection<Pesee> Pesee { get; set; }
+        public virtual ICollection<Pesee> Pesee { get; set; }
     }
 }

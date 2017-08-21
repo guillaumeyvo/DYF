@@ -6,6 +6,6 @@ namespace DYF.Models
     {
         public int Id { get; set; }
         public string Nom { get; set; }
-        public ICollection<Produit> Produits { get; set; }
+        public virtual ICollection<Produit> Produits { get; set; }
     }
 }

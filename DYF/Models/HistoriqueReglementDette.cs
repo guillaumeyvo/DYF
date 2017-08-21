@@ -12,6 +12,6 @@ namespace DYF.Models
         public DateTime DateReglement { get; set; }
         public int IdDette { get; set; }
         [ForeignKey("IdDette")]
-        public Dette Dette { get; set; }
+        public virtual Dette Dette { get; set; }
     }
 }

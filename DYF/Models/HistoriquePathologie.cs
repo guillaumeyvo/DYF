@@ -14,10 +14,10 @@ namespace DYF.Models
         public bool B_Curratif { get; set; }
         public int IdPathologie { get; set; }
         [ForeignKey("IdPathologie")]
-        public Pathologie Pathologie { get; set; }
+        public virtual Pathologie Pathologie { get; set; }
         public int IdRepartitionBande { get; set; }
         [ForeignKey("IdRepartitionBande")]
-        public RepartitionBande RepartitionBande { get; set; }
+        public virtual RepartitionBande RepartitionBande { get; set; }
         public ICollection<TraitementPathologie> TraitementPathologie { get; set; }
     }
 }

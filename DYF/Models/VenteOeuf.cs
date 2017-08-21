@@ -15,6 +15,6 @@ namespace DYF.Models
         public int PrixUnitaire { get; set; }
         public int IdBande { get; set; }
         [ForeignKey("IdBande")]
-        public Bande Bande { get; set; }
+        public virtual Bande Bande { get; set; }
     }
 }

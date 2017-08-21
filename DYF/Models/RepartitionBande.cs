@@ -16,7 +16,7 @@ namespace DYF.Models
         public string Nom { get; set; }
         public int IdBande { get; set; }
         [ForeignKey("IdBande")]
-        public Bande Bande { get; set; }
+        public virtual Bande Bande { get; set; }
         public int IdBatiment { get; set; }                                                 
         [ForeignKey("IdBatiment")]
         public Batiment Batiment { get; set; }

@@ -13,12 +13,12 @@ namespace DYF.Models
         public DateTime Date { get; set; }
         public int IdAchat { get; set; }
         [ForeignKey("IdAchat")]
-        public Achat Achat { get; set; }
+        public virtual Achat Achat { get; set; }
         public int IdProduit { get; set; }
         [ForeignKey("IdProduit")]
-        public Produit Produit { get; set; }
+        public virtual Produit Produit { get; set; }
         public int IdRepartitionBande { get; set; }
         [ForeignKey("IdRepartitionBande")]
-        public RepartitionBande RepartitionBande { get; set; }
+        public virtual RepartitionBande RepartitionBande { get; set; }
     }
 }

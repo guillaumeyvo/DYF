@@ -10,6 +10,6 @@ namespace DYF.Models
         public int Id { get; set; }
         public string Nom { get; set; }
         public string Description { get; set; }
-        public ICollection<Bande> Bande { get; set; }
+        public virtual ICollection<Bande> Bande { get; set; }
     }
 }

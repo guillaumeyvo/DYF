@@ -23,7 +23,6 @@
 
     $.validator.addMethod("bande-required",
         function (value, element, arg) {
-            console.log("ddddd", $("#bande option:selected").val() != "");
             return $("#bande option:selected").val() != "";
         });
 
@@ -78,7 +77,7 @@
         },
         unhighlight: function (element, errorClass, validClass) {
             if ($(element).is("select")) {
-                console.log("unhighlight", $(element).prev().prev(), $(element).prev().prev().hasClass("no-margin"));
+                //console.log("unhighlight", $(element).prev().prev(), $(element).prev().prev().hasClass("no-margin"));
                 $(element).prev().prev().removeClass("no-margin");
             }
             else {

@@ -13,7 +13,7 @@ namespace DYF.Models
         public double PoidsMoyen { get; set; }
         public int IdRaceVolaille { get; set; }
         [ForeignKey("IdRaceVolaille")]
-        public RaceVolaille RaceVolaille { get; set; }
+        public virtual RaceVolaille RaceVolaille { get; set; }
 
     }
 }

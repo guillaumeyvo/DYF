@@ -15,14 +15,14 @@ namespace DYF.Models
         public int IdRepartitionBande { get; set; }
 
         [ForeignKey("IdRepartitionBande")]
-        public RepartitionBande RepartitionBande { get; set; }
+        public virtual RepartitionBande RepartitionBande { get; set; }
         public int IdProductionAliment { get; set; }
 
         [ForeignKey("IdProductionAliment")]
-        public ProductionAliment ProductionAliment { get; set; }
+        public virtual ProductionAliment ProductionAliment { get; set; }
         public int IdFormule { get; set; }
 
         [ForeignKey("IdFormule")]
-        public Formule Formule { get; set; }
+        public virtual Formule Formule { get; set; }
     }
 }

@@ -84,7 +84,7 @@ namespace DYF.Migrations
                 CoutTotal = 3000 * 570,
                 MontantRegle = 3000 * 570,
                 DateAchat = new DateTime(2017, 5, 1),
-                DateLivraison = new DateTime(2017, 5, 10),
+                DateLivraison = new DateTime(2017, 8, 1),
                 IdFournisseur = context.Fournisseur.FirstOrDefault(t => t.Nom == "FACI").Id,
                 IdProduit = context.Produit.FirstOrDefault(t => t.Nom == "Pondeuses").Id,
                 IdTypeProduit = context.TypeProduit.FirstOrDefault(t => t.Nom == "Volailles").Id

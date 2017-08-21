@@ -16,7 +16,7 @@ namespace DYF.Models
         public int IdFormule { get; set; }
 
         [ForeignKey("IdFormule")]
-        public Formule Formule { get; set; }
+        public virtual Formule Formule { get; set; }
 
         public virtual ICollection<Consommation> Consommation { get; set; }
     }

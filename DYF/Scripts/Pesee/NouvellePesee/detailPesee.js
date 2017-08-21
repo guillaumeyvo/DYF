@@ -2,6 +2,8 @@
     var arrayPoids = [];
     var $dataTable, $dataTableBody, $addData, $nombreDeSujet, $poids, $datatableWrapper, $formAddDataPesee;
 
+    init();
+
     function init() {
         $dataTable = $('#tablePeseeDetails').DataTable({
             "dom": 'rtip', // hides search and number of rows controls of datatable

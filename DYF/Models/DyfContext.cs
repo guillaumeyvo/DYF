@@ -15,6 +15,8 @@ namespace DYF.Models
             //Database.SetInitializer<DyfContext>(new DropCreateDatabaseIfModelChanges<DyfContext>());
             //Database.SetInitializer<DyfContext>(new DropCreateDatabaseAlways<DyfContext>());
             //Database.SetInitializer<DyfContext>(new DyfInitializer());
+            this.Configuration.ProxyCreationEnabled = true;
+            this.Configuration.LazyLoadingEnabled = true;
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<DyfContext, DYF.Migrations.Configuration>("mysqlcs"));
 
 
@@ -26,6 +28,7 @@ namespace DYF.Models
         public DbSet<Batiment> Batiment { get; set; }
         public DbSet<Consommation> Consommation { get; set; }
         public DbSet<CoutProduit> CoutProduit { get; set; }
+        public DbSet<DetailsPesee> DetailsPesee { get; set; }
         public DbSet<Dette> Dette { get; set; }
         public DbSet<Formule> Formule { get; set; }
         public DbSet<Fournisseur> Fournisseur { get; set; }
