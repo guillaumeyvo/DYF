@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
 
     // #region Default plugin values
+    
     // Extend the default picker options for all instances.
     $.extend($.fn.pickadate.defaults, {
         monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
@@ -14,38 +15,15 @@
         formatSubmit: 'yyyy/mm/dd'
     })
 
-    // Default value for dataTable
-    $.extend(true, $.fn.dataTable.defaults, {
-        language: {
-            processing: "Traitement en cours...",
-            search: "Rechercher&nbsp;:",
-            lengthMenu: "Afficher _MENU_ &eacute;l&eacute;ments",
-            info: "Affichage de l'&eacute;lement _START_ &agrave; _END_ sur _TOTAL_ &eacute;l&eacute;ments",
-            infoEmpty: "Affichage de l'&eacute;lement 0 &agrave; 0 sur 0 &eacute;l&eacute;ments",
-            infoFiltered: "(filtr&eacute; de _MAX_ &eacute;l&eacute;ments au total)",
-            infoPostFix: "",
-            loadingRecords: "Chargement en cours...",
-            zeroRecords: "Aucun &eacute;l&eacute;ment &agrave; afficher",
-            emptyTable: "Aucune donnée disponible dans le tableau",
-            paginate: {
-                first: "Premier",
-                previous: "Pr&eacute;c&eacute;dent",
-                next: "Suivant",
-                last: "Dernier"
-            },
-            aria: {
-                sortAscending: ": activer pour trier la colonne par ordre croissant",
-                sortDescending: ": activer pour trier la colonne par ordre décroissant"
-            }
-        }
-    });
+    
 // #endregion
     
     // #region Init datepicker
     var picker = $('.datepicker').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15, // Creates a dropdown of 15 years to control year,
-        closeOnSelect: false // Close upon selecting a date,
+        closeOnSelect: false, // Close upon selecting a date,
+        hiddenName: true
         , onSet: function (ele) { // trigger validation of field on date selected
             $("#" + $(this.$node).attr("id") + "").valid();
         }

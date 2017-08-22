@@ -6,7 +6,7 @@
         ignore: []
     });
 
-    
+
 
     // #region Rules specific for step 1 formDetailNouvellePesee
 
@@ -33,7 +33,7 @@
             return value !== null;
         });
     // #endregion
-   
+
 
     // #region Rules for step 2 
     $.validator.addMethod("poids-uniqueValue",
@@ -54,7 +54,7 @@
     $.validator.setDefaults({
         errorElement: 'div',
         errorPlacement: function (error, element) {
-
+            // if the field to be validated is a select
             if ($(element).is("select")) {
                 $(element).prev().prev().addClass("no-margin");
                 var placement = $(element).data('error');
@@ -64,8 +64,24 @@
                     error.insertAfter(element);
                 }
             }
+            // if the field to be validated is a datepicker then add class to the root field
+            else if ($(element).prev().hasClass("picker") && $(element).attr("type") == "hidden") {
+                console.log("errorPlacement", $(element), $(element).attr("class"), $(element).attr("type"));
+
+                //$(element).prev().prev().addClass("no-margin")
+                var placement = $(element).data('error');
+                console.log("inside no margin picker", $(element), placement);
+
+                if (placement) {
+                    $(placement).append(error)
+                } else {
+                    $(element).prev().prev().addClass("no-margin");
+                    error.insertAfter($(element).next());
+                }
+            }
             else {
-                $(element).addClass("no-margin");
+                $(element).addClass("no-margin classic");
+
                 var placement = $(element).data('error');
                 if (placement) {
                     $(placement).append(error)
@@ -81,6 +97,7 @@
                 $(element).prev().prev().removeClass("no-margin");
             }
             else {
+
                 $(element).removeClass("no-margin");
             }
         },
@@ -111,7 +128,7 @@
                 digits: "Veuillez spécifier une nombre",
                 min: "Veuillez spécifier une valeur superieure à 0",
                 number: "Veuillez spécifier un nombre valide",
-                "poids-uniqueValue" : "Cette valeur est deja spécifiée"
+                "poids-uniqueValue": "Cette valeur est deja spécifiée"
             }
             , nombreDeSujet: {
                 required: "Veuillez spécifier une valeur",
@@ -134,12 +151,12 @@
             , repartitionBande: {
                 "bande-required": true,
                 "select-required": true
-                
+
             }
             , datePesee: {
                 "repartitionBande-required": true,
                 "date-required": true
-                
+
             }
             , typePesee: "required"
         },
@@ -148,7 +165,7 @@
             repartitionBande: {
                 "bande-required": "Veuillez spécifier une bande",
                 "select-required": "Veuillez spécifier un batiment"
-                
+
             },
             datePesee: {
                 "date-required": "Veuillez selectionner une date",
@@ -186,6 +203,6 @@
             $("#step2-error").parent().show();
         }
     });
-    
+
     // #endregion
 })();

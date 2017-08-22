@@ -455,7 +455,8 @@
     <Content Include="Views\Pesee\_step2.cshtml" />
     <Content Include="Views\Pesee\_step3.cshtml" />
     <Content Include="Views\Pesee\_step3CardTemplate.cshtml" />
-    <Content Include="Views\Pesee\selectTemplate.cshtml" />
+    <Content Include="Views\MustacheTemplate\selectTemplate.cshtml" />
+    <Content Include="Views\MustacheTemplate\datePickerTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

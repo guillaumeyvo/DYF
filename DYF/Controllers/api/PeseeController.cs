@@ -42,9 +42,39 @@ namespace DYF.Controllers.api
                 if (db.Pesee.Count(p => p.IdRepartitionBande == idRepartitionBande) > 0)
                 {
                     dateDernierePesee = db.Pesee.OrderByDescending(o => o.Date).FirstOrDefault(p => p.IdRepartitionBande == idRepartitionBande).Date;
-                    return Ok(new { year = dateDernierePesee.Year, month = dateDernierePesee.Month, day = dateDernierePesee.Day });
+                    var obj = new
+                    {
+                        dateDernierePesee = new
+                        {
+                            year = dateDernierePesee.Year,
+                            month = dateDernierePesee.Month,
+                            day = dateDernierePesee.Day
+                        },
+                        dateArriveBande = new
+                        {
+                            year = dateArriveBande.Year,
+                            month = dateArriveBande.Month,
+                            day = dateArriveBande.Day
+                        }
+                    };
+                    return Ok(obj);
+
                 }
-                return Ok(new { year = dateArriveBande.Year, month = dateArriveBande.Month, day = dateArriveBande.Day});
+                else
+                {
+                    var obj = new
+                    {
+                        dateDernierePesee = new {},
+                        dateArriveBande = new
+                        {
+                            year = dateArriveBande.Year,
+                            month = dateArriveBande.Month,
+                            day = dateArriveBande.Day
+                        }
+                    };
+                    return Ok(obj);
+                }
+                
             }
             catch (Exception e)
             {

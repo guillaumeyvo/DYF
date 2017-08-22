@@ -1,5 +1,9 @@
 ﻿var infoPesee = (function () {
-    var $selectBande, $selectRepartitionBande, $datePesee, $selectTemplate, semaine;
+    var $selectBande, $selectRepartitionBande, $datePesee, $datePickerDiv, $selectTemplate, $datePickerTemplate, semaine;
+    var datePeseeData = {
+        fieldName: "datePesee",
+        label: "Selectionner la date de la pesée"
+    };
 
     init();
 
@@ -8,11 +12,18 @@
         $selectBande = $("#bande");
         $selectRepartitionBande = $("#repartitionBande");
         $datePesee = $("#datePesee");
+        $datePickerDiv = $("#datePeseeDiv");
         $selectTemplate = $("#select-template").html();
-
+        $datePickerTemplate = $("#datePicker-template").html();
+        generateDatePeseeDatePicker();
         // bind events
         $selectBande.change(getRepartitionBande);
         $selectRepartitionBande.change(loadDerniereDateDePesee);
+    }
+
+
+    function generateDatePeseeDatePicker() {
+        $datePickerDiv.html(Mustache.render($datePickerTemplate, datePeseeData));
     }
 
 
@@ -50,24 +61,26 @@
             //type: "POST",
             url: "api/Pesee/GetPeseeLastDate?idRepartitionBande=" + idRepartitionBandeSelected,
             success: function (response) {
-                var $dateDivError = $datePesee.next();
-                if ($dateDivError.hasClass("error")) {
-                    $dateDivError.remove();
-                    $datePesee.removeClass("error");
+                var date;
+                if (Object.keys(response.dateDernierePesee).length == 0) {
+                    date = response.dateArriveBande;
                 }
-                $datePesee.remove();
-                var datePeseeHtml = '<input type="text" class="datepicker date-required" id="datePesee" name="datePesee">';
-                $("label[for='datePesee']").before(datePeseeHtml)
+                else {
+                    date = response.dateDernierePesee;
+                }
+                
+                $datePickerDiv.empty();
+                generateDatePeseeDatePicker();
 
                 $('#datePesee').pickadate({
                     selectMonths: true, // Creates a dropdown to control month
                     selectYears: 5, // Creates a dropdown of 15 years to control year,
-                    min: new Date(response.year, response.month-1, response.day),
+                    min: new Date(date.year, date.month - 1, date.day),
                     hiddenName: true,
                     closeOnSelect: false // Close upon selecting a date,
                     , onSet: function (ele) { // trigger validation of field on date selected
                         $("#" + $(this.$node).attr("id") + "").valid();
-                        var dateArrivee = new Date(response.year, response.month-1, response.day);
+                        var dateArrivee = new Date(response.dateArriveBande.year, response.dateArriveBande.month - 1, response.dateArriveBande.day);
                         var dateSelected = ele.select;
                         // determining corresponding week number
                         semaine = getnombreDeSemaine(dateArrivee.getTime(), dateSelected);
@@ -103,7 +116,5 @@
         init: init,
         data: getData
     }
-
-
 
 })();
