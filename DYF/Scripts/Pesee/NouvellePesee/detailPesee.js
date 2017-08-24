@@ -13,24 +13,27 @@
         });
 
         // cache dom
+        domInit()
+
+        // hiding datatable on init
+        $datatableWrapper.hide();
+
+        // binding events
+        $(document).on("click", ".deleteTableRow", removeTableData);
+        $(document).on("click", "#addData", addTableData);
+    }
+
+    function domInit() {
         $datatableWrapper = $('#tablePeseeDetails').parent();
         $formAddDataPesee = $("#formAddDataPesee");
         $addData = $("#addData");
         $nombreDeSujet = $("#nombreDeSujet");
         $poids = $("#poids");
         $dataTableBody = $('#tablePeseeDetails tbody');
-
-        // hiding datatable on init
-        $datatableWrapper.hide();
-
-
-        // binding events
-        $dataTableBody.on("click", ".deleteTableRow", removeTableData);
-        $addData.on("click", addTableData);
     }
 
+
     function addTableData() {
-        //console.log("addTableData");
 
         if ($formAddDataPesee.valid()) {
             if (!$datatableWrapper.is(":visible")) {
@@ -40,7 +43,6 @@
                     $("#step2-error").parent().hide();
                 }
             }
-
             $dataTable.row.add([
                 $poids.val(),
                 $nombreDeSujet.val(),
@@ -86,7 +88,7 @@
         //, removeTableData: removeTableData
         getTableData: getTableData
         //, clearTableData: clearTableData
-        , init: init
+        , domInit: domInit
         , arrayPoids: arrayPoids,
         datatable: $dataTable
 

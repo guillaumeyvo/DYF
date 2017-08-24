@@ -3,14 +3,32 @@
 <div class="step-title waves-effect">Informations</div>
 <div class="step-content">
     <div class="row">
+        <!-- #region Loader -->
+        <div id="step1Loader">
+            <div class="preloader-wrapper big active loader">
+                <div class="spinner-layer spinner-blue-only">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div><div class="gap-patch">
+                        <div class="circle"></div>
+                    </div><div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- #endregion -->
+        
+        
         <form class="col s12 card" id="formDetailNouvellePesee" name="formDetailNouvellePesee">
-            <div class="row card-header">
+
+            <div class="row card-header" id="step1Header">
                 Information de la pesée
-                <a href='#' class='dropdown-button card-header-option' data-activates='dropdown1'><i class="material-icons right">more_vert</i></a>
+                @*<a href='#' class='dropdown-button card-header-option' data-activates='dropdown1'><i class="material-icons right">more_vert</i></a>
                 <ul id='dropdown1' class='dropdown-content'>
                     <li><a href="#!">one</a></li>
                     <li><a href="#!">two</a></li>
-                </ul>
+                </ul>*@
             </div>
             <div class="row">
                 <div class="input-field col s12 m6 l6">

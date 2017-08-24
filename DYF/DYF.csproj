@@ -350,7 +350,7 @@
     <Content Include="Plugins\mustache\mustache.js" />
     <Content Include="Plugins\mustache\mustache.min.js" />
     <Content Include="Scripts\Pesee\NouvellePesee\detailPesee.js" />
-    <Content Include="Scripts\Pesee\NouvellePesee\events.js" />
+    <Content Include="Scripts\Pesee\NouvellePesee\aa_events.js" />
     <Content Include="Scripts\Pesee\NouvellePesee\formValidation.js" />
     <Content Include="Content\materialize.css" />
     <Content Include="Content\materialize.min.css" />
@@ -434,6 +434,7 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Todo.txt" />
+    <Content Include="Scripts\Pesee\NouvellePesee\stepOption.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -457,6 +458,7 @@
     <Content Include="Views\Pesee\_step3CardTemplate.cshtml" />
     <Content Include="Views\MustacheTemplate\selectTemplate.cshtml" />
     <Content Include="Views\MustacheTemplate\datePickerTemplate.cshtml" />
+    <Content Include="Views\MustacheTemplate\peseeCardActionTemplate.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

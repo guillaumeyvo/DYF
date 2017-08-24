@@ -2,13 +2,13 @@
 <div class="step-content">
     <div class="row">
         <div class="col s12 m12 l12 card">
-            <div class="row card-header">
+            <div class="row card-header" id="step2Header">
                 Données de la pesée
-                <a href='#' class='dropdown-button card-header-option' data-activates='dropdown1'><i class="material-icons right">more_vert</i></a>
-                <ul id='dropdown1' class='dropdown-content'>
-                    <li><a href="#!">one</a></li>
-                    <li><a href="#!">two</a></li>
-                </ul>
+                @*<a href='#' class='dropdown-button card-header-option' data-activates='dropdown1'><i class="material-icons right">more_vert</i></a>
+                    <ul id='dropdown1' class='dropdown-content'>
+                        <li><a href="#!">one</a></li>
+                        <li><a href="#!">two</a></li>
+                    </ul>*@
             </div>
             <div class="row">
                 <form id="formAddDataPesee" name="formAddDataPesee">
@@ -44,93 +44,96 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <!-- #region Dummy data -->
                         @*<tr>
-                            <td>1500</td>
-                            <td>10</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1460</td>
-                            <td>4</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1410</td>
-                            <td>3</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1750</td>
-                            <td>3</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1620</td>
-                            <td>8</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1540</td>
-                            <td>11</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1590</td>
-                            <td>9</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1340</td>
-                            <td>11</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1770</td>
-                            <td>6</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1250</td>
-                            <td>4</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1290</td>
-                            <td>6</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1470</td>
-                            <td>7</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1570</td>
-                            <td>14</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1640</td>
-                            <td>13</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1650</td>
-                            <td>9</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>
-                        <tr>
-                            <td>1520</td>
-                            <td>14</td>
-                            <td><i class="material-icons deleteTableRow">delete</i></td>
-                        </tr>*@
+                                <td>1500</td>
+                                <td>10</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1460</td>
+                                <td>4</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1410</td>
+                                <td>3</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1750</td>
+                                <td>3</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1620</td>
+                                <td>8</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1540</td>
+                                <td>11</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1590</td>
+                                <td>9</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1340</td>
+                                <td>11</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1770</td>
+                                <td>6</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1250</td>
+                                <td>4</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1290</td>
+                                <td>6</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1470</td>
+                                <td>7</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1570</td>
+                                <td>14</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1640</td>
+                                <td>13</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1650</td>
+                                <td>9</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>
+                            <tr>
+                                <td>1520</td>
+                                <td>14</td>
+                                <td><i class="material-icons deleteTableRow">delete</i></td>
+                            </tr>*@
+                        <!-- #endregion -->
+
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
     <div class="row" style="display:none">
-        <div id="step2-error" class="error" >Veuillez spécifier les données de la pésée</div>
+        <div id="step2-error" class="error">Veuillez spécifier les données de la pésée</div>
     </div>
     <div class="row step-actions" style="padding-top:0px;">
         <a class="waves-effect waves-light btn" id="endOfSecondStep">Suivant</a>

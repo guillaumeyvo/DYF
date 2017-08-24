@@ -1,5 +1,4 @@
 ﻿//events (publish subscribe) pattern
-
 var events = {
   events: {},
   on: function (eventName, fn) {

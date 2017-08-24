@@ -1,5 +1,5 @@
 ﻿var infoPesee = (function () {
-    var $selectBande, $selectRepartitionBande, $datePesee, $datePickerDiv, $selectTemplate, $datePickerTemplate, semaine;
+    var $step1Loader,$selectBande, $selectRepartitionBande, $datePesee, $datePickerDiv, $selectTemplate, $datePickerTemplate, semaine;
     var datePeseeData = {
         fieldName: "datePesee",
         label: "Selectionner la date de la pesée"
@@ -11,14 +11,19 @@
 
         $selectBande = $("#bande");
         $selectRepartitionBande = $("#repartitionBande");
+        $step1Loader = $("#step1Loader");
         $datePesee = $("#datePesee");
         $datePickerDiv = $("#datePeseeDiv");
         $selectTemplate = $("#select-template").html();
         $datePickerTemplate = $("#datePicker-template").html();
         generateDatePeseeDatePicker();
+        $step1Loader.hide();
+
         // bind events
         $selectBande.change(getRepartitionBande);
         $selectRepartitionBande.change(loadDerniereDateDePesee);
+        events.on('step1Reset', generateDatePeseeDatePicker);
+
     }
 
 
@@ -102,7 +107,6 @@
         return numberOfWeek;
     }
     function getData() {
-        console.log("ddddddddd");
         return {
             datePesee: $("input[type='hidden'][name='datePesee']").val(),// selector for getting hidden value
             typePesee: $("input[name='typePesee']:checked").attr("value"),

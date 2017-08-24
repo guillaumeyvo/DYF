@@ -20,7 +20,7 @@
 // #endregion
     
     // #region Init datepicker
-    var picker = $('.datepicker').pickadate({
+    var picker = $('#datePesee').pickadate({
         selectMonths: true, // Creates a dropdown to control month
         selectYears: 15, // Creates a dropdown of 15 years to control year,
         closeOnSelect: false, // Close upon selecting a date,
@@ -47,5 +47,5 @@
     
 
     // #endregion
-    $('.tooltipped').tooltip({ delay: 50 });
+    
 });

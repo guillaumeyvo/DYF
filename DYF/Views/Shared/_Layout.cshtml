@@ -129,8 +129,10 @@
     <!-- #region Dynamically includes scripts for each view -->
 
     @RenderSection("scripts", required: false)
-
-    @foreach (string path in Directory.GetFiles(Server.MapPath(@Url.Content("~/Scripts/" + @ViewBag.CurrentController + "/" + @ViewBag.CurrentView + ""))))
+    @{ 
+        var scriptPath = Server.MapPath(@Url.Content("~/Scripts/" + @ViewBag.CurrentController + "/" + @ViewBag.CurrentView + ""));
+    }
+    @foreach (string path in Directory.GetFiles(scriptPath))
     {
         @Scripts.Render("~/Scripts/" + @ViewBag.CurrentController + "/" + @ViewBag.CurrentView + "/" + Path.GetFileName(path));
     }

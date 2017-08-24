@@ -144,6 +144,19 @@ ul.stepper:not(.horizontal) .step.active::before, ul.stepper:not(.horizontal) .s
     background-color: #ee6e73 !important;
 }
 
+.loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 9999;
+}
+
+.loading-opacity{
+    opacity:0.3;
+}
 
 
 /*#endregion */

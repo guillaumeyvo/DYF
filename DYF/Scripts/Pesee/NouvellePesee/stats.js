@@ -1,6 +1,7 @@
 ﻿var stats = (function () {
 
     events.on('endOfDetailsPesee', render);
+
     var $template, $endOfThirdStep, stats;
     var totalSujets = 0;
     var totalPoids = 0;
@@ -76,7 +77,7 @@
 
         };
 
-        console.log("stats", stats);
+        //console.log("stats", stats);
 
         return stats;
     }

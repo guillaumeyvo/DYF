@@ -38,6 +38,7 @@
     // #region Rules for step 2 
     $.validator.addMethod("poids-uniqueValue",
         function (value, element, arg) {
+            //console.log("detailsPesee.arrayPoids",detailsPesee.arrayPoids);
             if (detailsPesee.arrayPoids.length == 0 || detailsPesee.arrayPoids.indexOf(parseInt(value)) == -1) {
                 return true;
             }
@@ -54,8 +55,11 @@
     $.validator.setDefaults({
         errorElement: 'div',
         errorPlacement: function (error, element) {
+
             // if the field to be validated is a select
             if ($(element).is("select")) {
+                //console.log("errorPlacement select", error, element);
+
                 $(element).prev().prev().addClass("no-margin");
                 var placement = $(element).data('error');
                 if (placement) {
@@ -66,7 +70,7 @@
             }
             // if the field to be validated is a datepicker then add class to the root field
             else if ($(element).prev().hasClass("picker") && $(element).attr("type") == "hidden") {
-                console.log("errorPlacement", $(element), $(element).attr("class"), $(element).attr("type"));
+                //console.log("errorPlacement date", $(element), $(element).attr("class"), $(element).attr("type"));
 
                 //$(element).prev().prev().addClass("no-margin")
                 var placement = $(element).data('error');
@@ -80,7 +84,9 @@
                 }
             }
             else {
-                $(element).addClass("no-margin classic");
+                //console.log("errorPlacement other", error, element);
+
+                $(element).addClass("no-margin");
 
                 var placement = $(element).data('error');
                 if (placement) {
